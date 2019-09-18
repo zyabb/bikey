@@ -1,0 +1,15 @@
+.cart {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  h2 {
+    width: 350px;
+    text-align: left;
+  }
+  i {
+    position: relative;
+    left: 5px;
+    color: gray;
+  }
+}

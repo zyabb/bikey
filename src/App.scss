@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Abel|Satisfy&display=swap');
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Abel', 'Satisfy';
+  margin: 0;
+}
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+$desktop: 840px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+body #bg {
+  -webkit-clip-path: polygon(100% 0, 100% 52%, 52% 100%, 0 100%, 0 0);
+  clip-path: polygon(100% 0, 100% 52%, 52% 100%, 0 100%, 0 0);
+  background-color: #005dff;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+@media (min-width: 840px) {
+  body #bg {
+    -webkit-clip-path: polygon(78% 0, 65% 49%, 52% 100%, 0 100%, 0 0);
+    clip-path: polygon(78% 0, 65% 49%, 52% 100%, 0 100%, 0 0);
+  }
+}
+
+body header {
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media (min-width: 840px) {
+  body header {
+    max-width: 1200px;
+    margin: 0 auto;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+body header #logo a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Satisfy';
+  font-size: 24px;
+}
+
+@media (min-width: 840px) {
+  body header #logo a {
+    font-size: 48px;
+  }
+}
+
+body header #cart {
+  color: white;
+}
+
+@media (min-width: 840px) {
+  body header #cart {
+    color: #005dff;
+  }
+}
+
+main {
+  color: white;
+  max-width: 300px;
+  margin: 0 auto;
+
+  @include desktop {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  section#cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: 'Abel';
+  }
+}

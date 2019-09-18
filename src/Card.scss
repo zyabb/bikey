@@ -1,0 +1,104 @@
+$colors: (
+  primary: #005dff,
+  logo: white,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+$desktop: 840px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+.card {
+  position: relative;
+  margin-bottom: 15px;
+  background-color: white;
+  width: 320px;
+  height: 380px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
+
+  img {
+    position: relative;
+    width: 320px;
+    height: 195px;
+    border-radius: 15px 15px 0 0;
+    top: 0px;
+    left: 0px;
+  }
+
+  .description {
+    color: black;
+    margin: 5px 15px;
+    .title {
+      margin: 0px;
+    }
+    .price {
+      margin: 0px;
+    }
+    .type {
+      margin: 0px;
+      color: gray;
+    }
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 15px;
+    a {
+      display: flex;
+      width: 210px;
+      height: 50px;
+      background-color: color(primary);
+      color: color(logo);
+      border-radius: 15px;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      left: 25%;
+
+      &:hover {
+        background-color: #8bb4fa;
+      }
+      &:active {
+        background-color: rgb(10, 18, 227);
+      }
+    }
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 15px;
+  a {
+    display: flex;
+    width: 210px;
+    height: 50px;
+    background-color: color(primary);
+    color: color(logo);
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    left: 25%;
+
+    &:hover {
+      background-color: #8bb4fa;
+    }
+    &:active {
+      background-color: rgb(10, 18, 227);
+    }
+  }
+}
